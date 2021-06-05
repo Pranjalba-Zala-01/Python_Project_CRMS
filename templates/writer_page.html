@@ -1,5 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CRMS Login</title>
+	<meta charset="UTF-8">
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body bgcolor="#E4DBD9">
+    {% csrf_token %}
+    <header><h1><p style="color:rgb(5, 7, 6);font-size:30px;font-family:'Ubuntu-Bold'">Welcome To Writer's Page <font color="red">{{username}}</font></p></h1><br></header>
 
-<h1>Welcome : {{username}}</h1><br/>
-<h2>Want to add writer: <a href="writer_form">Add</a></h2><br/>
-<h2>Want to look at list of writers: <a href="writer_list">View</a></h2><br/>
-<h2>Want to logout? <a href="logout">Logout</a></h2>
+		<center>
+        <footer><h2>Want to logout?<a href="logout" style="color:rgb(157, 33, 189);font-size:25px;font-family:'Ubuntu-Bold'"> Logout</a></h2></footer>
+
+		<h2>Want to add writer: <a style="color:rgb(157, 33, 189);font-size:25px;font-family:'Ubuntu-Bold'" href="writer_form">Add</a></h2><br/>
+
+		<h2>Want to look at list of writers: <a href style="color:rgb(157, 33, 189);font-size:25px;font-family:'Ubuntu-Bold'">View</a></h2><br/>
+		</center>
+</body>
+</html>
