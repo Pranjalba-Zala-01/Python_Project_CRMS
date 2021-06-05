@@ -1,0 +1,23 @@
+<table border="5" height="100" width="400">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>ID</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for writer in writer_list %}
+        <tr>
+            <td>{{writer.id}}</td>
+            <td>{{writer.username}}</td>
+            <td>{{writer.password}}</td>
+            <td>
+                <a href="{% url 'writer_update' writer.id %}">Edit</a>&nbsp;
+                <a href="{% url 'writer_delete' writer.id %}">Delete</a>&nbsp;
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
