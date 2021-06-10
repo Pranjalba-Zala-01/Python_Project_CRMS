@@ -1,0 +1,27 @@
+{% load static %}  
+<html>
+    <head>
+        <title>Writer Registration Page</title>
+        <style>
+            h1{
+                font-family: "montserrat";
+                color: chocolate;
+                font-weight: bold;
+            }
+
+            p{
+                font-family: "montserrat";
+                font-weight: bold;
+            }
+        </style>
+    </head>
+<body bgcolor="#D3D3D3">
+<form action="" method="POST">
+    <center><h1> Welcome to Writer's Registration Page</h1>
+    <p>Please Fill below details <br><br><br></center>
+    {% csrf_token %}
+    {{form}}</p><br><br><center>
+    <input type="submit" name="submit" style="font-size:large;"> <br/></center>
+</form>
+</body>
+</html>
