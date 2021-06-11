@@ -1,4 +1,9 @@
+{%extends "base.html" %}
 {% load static %}  
+{% load crispy_forms_tags %}
+{% block content %}
+
+                
 <html>
     <head>
         <title>Writer Registration Page</title>
@@ -17,11 +22,11 @@
     </head>
 <body bgcolor="#D3D3D3">
 <form action="" method="POST">
-    <center><h1> Welcome to Writer's Registration Page</h1>
-    <p>Please Fill below details <br><br><br></center>
+    
     {% csrf_token %}
-    {{form}}</p><br><br><center>
+    {{form|crispy}}</p><br><br>
     <input type="submit" name="submit" style="font-size:large;"> <br/></center>
 </form>
+{% endblock %}
 </body>
 </html>
