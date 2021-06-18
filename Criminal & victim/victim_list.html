@@ -6,6 +6,19 @@
                 color: chocolate;
                 font-weight: bold;
             }
+            .btn{
+                border: 1px solid #18180e;
+                background:none;
+                padding: 10px 30px;
+                font-size: 20px;
+                font-family: "montserrat";
+                cursor: pointer;
+                margin: 10px;
+                transition: 0.9s;
+                position: relative;
+                overflow: hidden;
+                color:brown
+            }
         </style>
         <body bgcolor="#D3D3D3">
             <center><h1>List of Victims</h1></center>
@@ -38,6 +51,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="container">
+				<br><center><a href="writer_page"><button class="btn btn">Back</button></a></center>
+			</div>
         </body>
     </head>
 </html>
