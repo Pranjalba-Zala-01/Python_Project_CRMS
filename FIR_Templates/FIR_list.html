@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            h1{
+                font-family: "montserrat";
+                color: chocolate;
+                font-weight: bold;
+            }
+        </style>
+        <body bgcolor="#D3D3D3">
+            <center><h1>List of FIR's</h1></center>
+            <table border="5" align="center">
+                <thead class="border-bottom font-weight-bold">
+                    <tr style="font-family:'montserrat';font-weight:bold;color:darkslategrey">
+                        <td>ID</td>
+                        <td>FIR Type</td>
+                        <td>Victim Name</td>
+                        <td>Victim Age</td>
+                        <td>Victim Address</td>
+                        <td>FIR Description</td>
+                        <td>FIR Date</td>
+                        <td>Incident Time</td>
+                        <td>Incident Place</td>
+                        <td>Suspected Criminal Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fir in FIR_list %}
+                    <tr style="font-family:'montserrat';">
+                        <td style="color:red;">{{fir.id}}</td>
+                        <td>{{fir.FIR_Type}}</td>
+                        <td>{{fir.Victim_Name}}</td>
+                        <td>{{fir.Victim_Age}}</td>
+                        <td>{{fir.Victim_Address}}</td>
+                        <td>{{fir.FIR_Description}}</td>
+                        <td>{{fir.FIR_Date}}</td>
+                        <td>{{fir.Incident_Time}}</td>
+                        <td>{{fir.Incident_Place}}</td>
+                        <td>{{fir.Suspected_Criminal_Name}}</td>
+                        <td>
+                            <a href="{% url 'FIR_update' fir.id %}" style="color:darkblue;">Edit</a>&nbsp;
+                            <a href="{% url 'FIR_delete' fir.id %}" style="color:red;">Delete</a>&nbsp;
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </body>
+    </head>
+</html>
