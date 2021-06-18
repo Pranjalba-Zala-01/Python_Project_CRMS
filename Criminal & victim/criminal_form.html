@@ -1,0 +1,33 @@
+{%extends "base.html" %}
+{% load static %}  
+{% load crispy_forms_tags %}
+{% block content %}
+
+                
+<html>
+    <head>
+        <title>Criminal Registration Page</title>
+        <style>
+            h1{
+                font-family: "montserrat";
+                color: chocolate;
+                font-weight: bold;
+            }
+
+            p{
+                font-family: "montserrat";
+                font-weight: bold;
+            }
+            body { background: #D3D3D3 }
+        </style>
+    </head>
+<body bgcolor="#D3D3D3">
+<form action="" method="POST">
+    
+    {% csrf_token %}
+    {{form|crispy}}</p><br><br>
+    <input type="submit" name="submit" style="font-size:large;"> <br/></center>
+</form>
+{% endblock %}
+</body>
+</html>
