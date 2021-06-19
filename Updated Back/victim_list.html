@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            h1{
+                font-family: "montserrat";
+                color: chocolate;
+                font-weight: bold;
+            }
+            .btn{
+                border: 1px solid #18180e;
+                background:none;
+                padding: 10px 30px;
+                font-size: 20px;
+                font-family: "montserrat";
+                cursor: pointer;
+                margin: 10px;
+                transition: 0.9s;
+                position: relative;
+                overflow: hidden;
+                color:brown
+            }
+        </style>
+        <body bgcolor="#D3D3D3">
+            <center><h1>List of Victims</h1></center>
+            <table border="5" align="center" height=150 width=1000>
+                <thead class="border-bottom font-weight-bold">
+                    <tr style="font-family:'montserrat';font-weight:bold;color:darkslategrey">
+                        <td>ID</td>
+                        <td>Username</td>
+                        <td>Phone Number</td>
+                        <td>Address</td>
+                        <td>Email</td>
+                        <td>Date Of Birth</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for victim in victim_list %}
+                    <tr style="font-family:'montserrat';">
+                        <td style="color:red;">{{victim.id}}</td>
+                        <td>{{victim.name}}</td>
+                        <td>{{victim.phone_no}}</td>
+                        <td>{{victim.address}}</td>
+                        <td>{{victim.email}}</td>
+                        <td>{{victim.dob}}</td>
+                        <td>
+                            <a href="{% url 'victim_update' victim.id %}" style="color:darkblue;">Edit</a>&nbsp;
+                            <a href="{% url 'victim_delete' victim.id %}" style="color:red;">Delete</a>&nbsp;
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="container">
+				<br><center><a href="writer_page"><button class="btn btn">Back</button></a></center>
+			</div>
+        </body>
+    </head>
+</html>
